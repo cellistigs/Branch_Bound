@@ -6,7 +6,7 @@ layout: default
 
 <div class="topnav">
   <a href="../">Home</a>
-  <a href="../page2">Docs</a>
+  <a href="page2">Docs</a>
   <a class="active" href="#">Tutorial</a>
 </div>
 

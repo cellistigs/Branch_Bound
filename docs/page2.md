@@ -6,8 +6,8 @@ layout: default
 
 <div class="topnav">
   <a href="../">Home</a>
-  <a class="active"  href="#">Docs</a>
-  <a href="../page3">Tutorial</a>
+  <a class="active" href="#">Docs</a>
+  <a href="page3">Tutorial</a>
 </div>
 
 You could put documentation for a library here. Example: [https://cunningham-lab.github.io/dsn/systems/](https://cunningham-lab.github.io/dsn/systems/).
