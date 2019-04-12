@@ -11,8 +11,8 @@ layout: default
   <a href="../git_template/page3">Tutorial</a>
 </div>
 
-# Professional coding practices #
-This semester, we had a discussion on professional coding practices in python.  I’ve compiled these ideas into a template repo, which can get you off the ground with gitpage documentation, packaging, unit testing, and continuous integration.  On this gitpage, I'll explain the functionality of the template, and how to adapt the it for your project.  The end of each section contains tips and rules of thumb for each topic.
+# Branch and Bound for Segment Matching algorithm #
+This repo implements a branch and bound algorithm to efficiently find an optimal assignment for segments tracking trajectories from behavioral video. There are variants $BB_{k}$ of the algorithm, where $k$ is a parameter to the bound function we use. In particular, our bound algorithm will perform exhaustive search to a depth k from the current segment, and perform 1-greedy evaluation of each resulting trajectory. The best of these provides a lower bound on the set of solutions being evaluated by the bound operation. 
 
 
 ## Using the template ##
