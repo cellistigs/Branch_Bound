@@ -7,8 +7,8 @@ layout: default
 
 <div class="topnav">
   <a class="active" href="#">Home</a>
-  <a href="page2">Docs</a>
-  <a href="page3">Tutorial</a>
+  <a href="../git_template/page2">Docs</a>
+  <a href="../git_template/page3">Tutorial</a>
 </div>
 
 # Professional coding practices #
