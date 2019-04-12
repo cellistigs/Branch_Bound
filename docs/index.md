@@ -21,7 +21,7 @@ To use this as a template for a new git repository:
 1. Sign into (or create) your github account on [https://github.com](https://github.com){:target="_blank"}.
 2. Click the plus button on the top-right of the screen, and select “Import Repository.”
 3. Under “Your old repository's clone URL” type \\
-`https://github.com/srbittner/git_template.git`
+`https://github.com/cunningham-lab/git_template.git`
 4. Name your repository, select privacy setting, and click the "Begin Import" button.
 
 Your new repo will inherit the files and commit history of the git_template repository, and you can edit to your liking from here.
@@ -29,11 +29,11 @@ Your new repo will inherit the files and commit history of the git_template repo
 ## Online documentation ##
 The webpage you are currently reading is the gitpage for the `git_template` repo.  Gitpages can be project-specific documentation websites, or standalone sites unafilliated with a particular repo.  Every git repo has a reserved gitpage url derived from the repo name and owner. 
 
-For example, the repo for git_template owned by srbittner is located at the familiar location. \\
-[https://github.com/srbittner/git_template](https://github.com/srbittner/git_template){:target="_blank"}
+For example, the repo for git_template owned by cunningham-lab is located at the familiar location. \\
+[https://github.com//git_template](https://github.com/cunningham-lab/git_template){:target="_blank"}
 
 And, the url for the gitpage follows the pattern `http://<owner name>.github.io/<repo name>/` \\
-[https://srbittner.github.io/git_template/](https://srbittner.github.io/git_template/){:target="_blank"}
+[https://cunningham-lab.github.io/git_template/](https://cunningham-lab.github.io/git_template/){:target="_blank"}
 
 To enable the gitpage for your `git_template` derived repo:
 1. Click the "Settings" tab on the home page of your repo.
@@ -220,7 +220,7 @@ You can use these examples in the `git_template` to setup unit tests for your ow
 * Longer running functions like optimizations (especially non-convex) are less suitable for unit testing.
 
 ## Continuous integration ##
-You can have a remote server automatically pull your repo, build it, and run your unit tests with a free service (for public repos) provided by [Travic CI](https://travis-ci.org/){:target="_blank"}.  This practice of automatically validating builds and tests regularly throughout development is called continuous integration.  I have set up continuous integration for `git_template` repo.  Check out the latest build here: [https://travis-ci.org/srbittner/git_template](https://travis-ci.org/srbittner/git_template){:target="_blank"}.
+You can have a remote server automatically pull your repo, build it, and run your unit tests with a free service (for public repos) provided by [Travic CI](https://travis-ci.org/){:target="_blank"}.  This practice of automatically validating builds and tests regularly throughout development is called continuous integration.  I have set up continuous integration for `git_template` repo.  Check out the latest build here: [https://travis-ci.org/cunningham-lab/git_template](https://travis-ci.org/cunningham-lab/git_template){:target="_blank"}.
 
 To set up continous integration for your public repo with Travis CI (you will have to go through these steps if you want continuous integration for an imported git_template):
 1. Go to [https://travis-ci.org/](https://travis-ci.org/){:target="_blank"} .
