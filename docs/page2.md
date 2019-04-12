@@ -5,8 +5,8 @@ layout: default
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
 <div class="topnav">
-  <a class="active" href="../">Home</a>
-  <a href="#">Docs</a>
+  <a href="../">Home</a>
+  <a class="active"  href="#">Docs</a>
   <a href="../page3">Tutorial</a>
 </div>
 
