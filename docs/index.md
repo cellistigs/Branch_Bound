@@ -30,7 +30,7 @@ Your new repo will inherit the files and commit history of the git_template repo
 The webpage you are currently reading is the gitpage for the `git_template` repo.  Gitpages can be project-specific documentation websites, or standalone sites unafilliated with a particular repo.  Every git repo has a reserved gitpage url derived from the repo name and owner. 
 
 For example, the repo for git_template owned by cunningham-lab is located at the familiar location. \\
-[https://github.com//git_template](https://github.com/cunningham-lab/git_template){:target="_blank"}
+[https://github.com/cunningham-lab/git_template](https://github.com/cunningham-lab/git_template){:target="_blank"}
 
 And, the url for the gitpage follows the pattern `http://<owner name>.github.io/<repo name>/` \\
 [https://cunningham-lab.github.io/git_template/](https://cunningham-lab.github.io/git_template/){:target="_blank"}
@@ -63,7 +63,7 @@ While gitpages are a natural place to put your online documentation, they are no
 * Inline documentation should always be in complete sentences with standard English grammar.
 
 ## Style ##
-Software developers can get quite opinionated about style. This can lead to lengthy disagreements amongst team members, where project managers can be hard-pressed to please all parties. Most often, the time spent settling style debates could be better re-purposed.  This is the philosophy behind [black](https://github.com/ambv/black){:target="_blank"}, the automated python code formatter, which is opinionated, so you don't have to be.  By running black on all project code, the style is automatically homogenized (no hand formatting), and mental energy can be saved for more important project tasks.  This repo template has a black code style badge, implying that its adopters will run black on their code before releasing it.  
+Software developers can get quite opinionated about style. This can lead to lengthy disagreements amongst team members, where project managers can be hard-pressed to please all parties. Most often, the time spent settling style debates could be better repurposed.  This is the philosophy behind [black](https://github.com/ambv/black){:target="_blank"}, the automated python code formatter, which is opinionated, so you don't have to be.  By running black on all project code, the style is automatically homogenized (no hand formatting), and mental energy can be saved for more important project tasks.  This repo template has a black code style badge, implying that its adopters will run black on their code before releasing it.  
 
 To format your code with black:
 1. ```pip install black```
@@ -72,7 +72,7 @@ To format your code with black:
 #### Style rules of thumb ####
 * Rather than wasting energy on determining style and hand-formatting, run automatic code formatters that are deterministic and opinionated for you.  
 * Black is our preferred formatter, but there are other suitable formatters.
-* You could write code in your "natural" style, and then constantly convert it using a formatter.  But ideally, you eventually correct your natural writing stile to that of the formatter to streamline your interpretation and subsequent development of formatted files.
+* You could write code in your "natural" style, and then constantly convert it using a formatter.  But ideally, you eventually correct your natural writing style to that of the formatter to streamline your interpretation and subsequent development of formatted files.
 
 
 
@@ -105,7 +105,7 @@ And, if the user would like to be able to edit these packages, and have changes 
 a.) `pip install -e .` \\
 b.) `python setup.py develop` 
 
-The choices of input to setup.py should be for the most part self-explanatory.  If there are additional dependencies for your repo, add them to the "install requires" list.  If you don't want the latest version of a dependency by default, you can require a specific version by using the "==".  
+The choices of input to `setup` in setup.py should be for the most part self-explanatory.  If there are additional dependencies for your repo, add them to the "install requires" list.  If you don't want the latest version of a dependency by default, you can require a specific version by using the "==".  
 For example:
 ```python
 install_requires=['numpy', 'tensorflow=1.13.1'],
@@ -118,7 +118,7 @@ install_requires=['numpy', 'tensorflow=1.13.1'],
 ## Unit testing ##
 One of the first things you learn in an introductory programming course is how important it is to write unit tests.  Once a function is designed, a good programmer determines a set of unit tests with good coverage to ensure proper implementation.  Once implemented, the programmer checks for any failed unit tests.
 
-[Pytest](https://docs.pytest.org/en/latest/){:target="_blank"} is a convenient tool for running unit tests. Pytest auto-discovers testing scripts and has nice diagnostics for indicating why assert statements fail, modular fixtures, and other features that make it useful. By calling `pytest` in the base directory of a repo, pytest searches recursively for any ".py" files with the string "test" in the name.  Then, within each of these test files, discovers all functions with the string "test" in the function name, and executes them.  
+[Pytest](https://docs.pytest.org/en/latest/){:target="_blank"} is a convenient tool for running unit tests. Pytest auto-discovers testing scripts and has diagnostics for indicating why assert statements fail, modular fixtures, and other features that make it useful. By calling `pytest` in the base directory of a repo, pytest searches recursively for any ".py" files with the string "test" in the name.  Then, within each of these test files, discovers all functions with the string "test" in the function name, and executes them.  
 
 Consider unit testing for two python modules `git_template/numeric.py` and `git_template/strings.py`, which contain 2 and 1 functions repsectively.  The unit testing scripts for these functions are `tests/test_numeric.py` and `tests/test_strings.py`.
 
@@ -215,12 +215,12 @@ You can use these examples in the `git_template` to setup unit tests for your ow
 
 #### Unit-testing rules of thumb ####
 * Modularize your code to reduce repetition and aid interpretability.
-* Fast deterministic function should be simple to test.  
-* Random functions can be tested in expectation, bounds etc.  
-* Longer running functions like optimizations (especially non-convex) are less suitable for unit testing.
+* Fast deterministic functions should be simple to test.  
+* Random functions can be tested in expectation, bounds, etc.  
+* Longer running functions like optimizations (especially non-convex ones) are less suitable for unit testing.
 
 ## Continuous integration ##
-You can have a remote server automatically pull your repo, build it, and run your unit tests with a free service (for public repos) provided by [Travic CI](https://travis-ci.org/){:target="_blank"}.  This practice of automatically validating builds and tests regularly throughout development is called continuous integration.  I have set up continuous integration for `git_template` repo.  Check out the latest build here: [https://travis-ci.org/cunningham-lab/git_template](https://travis-ci.org/cunningham-lab/git_template){:target="_blank"}.
+You can have a remote server automatically pull your repo, build it, and run your unit tests with a free service (for public repos) provided by [Travic CI](https://travis-ci.org/){:target="_blank"}.  This practice of automatically validating builds and tests regularly throughout development is called continuous integration.  Continuous integration is setup for the `git_template` repo, and the latest build result can be found here: [https://travis-ci.org/cunningham-lab/git_template](https://travis-ci.org/cunningham-lab/git_template){:target="_blank"}.
 
 To set up continous integration for your public repo with Travis CI (you will have to go through these steps if you want continuous integration for an imported git_template):
 1. Go to [https://travis-ci.org/](https://travis-ci.org/){:target="_blank"} .
@@ -247,11 +247,11 @@ Finally, edit the url for the build status sticker in the README.md to point to 
 `<a href="https://travis-ci.org/<owner name>/<repo name>"><img alt="Build Status" src="https://travis-ci.org/<owner name>/<repo name>.svg?branch=master"></a>`
 
 #### Continuous integration rules of thumb ####
-* Setup email settings to notify you of faulty builds.
+* Setup email settings to notify you of failed builds.
 * For responsive build checks, reduce computation necessary for unit tests.
-* Long time-scale method/algorithm validation is likely best done outside a continuous integration framework.
+* Long time-scale method/algorithm validation is likely best done outside of a continuous integration framework.
 
-Hopefully, this template repo can serve as a nice launch point for projects incorporating some of the features listed above.  Feel free to get in touch with me at [srb2201@columbia.edu](#) for clarification or with feedback of any sort.
+Hopefully, this template repo can serve as a launch point for projects incorporating some of the features listed above.  Feel free to get in touch with me at [srb2201@columbia.edu](#) for clarification or feedback.
 
 Sean Bittner \\
 April 11, 2019
