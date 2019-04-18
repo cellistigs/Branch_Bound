@@ -2,11 +2,11 @@
 
 from setuptools import setup
 
-setup(name='git_template',
+setup(name='Branch_Bound',
       version='0.1',
-      description='Git template.',
-      author='Sean Bittner',
-      author_email='srb2201@columbia.edu',
+      description='Branch and bound algorithm for trajectories.',
+      author='Taiga Abe',
+      author_email='ta2507@columbia.edu',
       install_requires=['numpy'],
-      packages=['git_template']
+      packages=['Branch_Bound']
      )
