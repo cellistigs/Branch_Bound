@@ -39,13 +39,12 @@ def bound_path(Node_path,data,k):
     else: 
         recurse_sigs = np.array(np.meshgrid(*[np.arange(d) for ki in range(k_eff)])).T.reshape(-1,k_eff)
         eff_sigs = [base_sig+list(recurse_sig) for recurse_sig in recurse_sigs]
-    
     ### Calculate cost for all elements of explored recursion: 
     all_cost = [calculate_cost_path(sig,data) for sig in eff_sigs]
     min_cost = np.min(all_cost)
 
     ### Finally, we need a flag to indicate if this represents a real solution: 
-    if excess_depth == -k:
+    if excess_depth == k:
         solution = 1
     else:
         solution = 0
@@ -54,9 +53,9 @@ def bound_path(Node_path,data,k):
 ## Given a signature, returns the cost of the corresponding solution (full solution if the signature is complete, greedy approximation if not)
 def calculate_cost_path(signature,data):
     ## Calculate the cost of the given signature: 
-    traversed_len = len(signature)
+    traversed_len = len(signature)-1
     ## The weights should be of length 1 - depth, as they are links between the nodes. 
-    traversed = data[:,:,:traversed_len-1]
+    traversed = data[:,:,:traversed_len]
     ### Turn the signature into tuples for indexing:
     tuplesigs = [signature[i:i+2] for i in range(len(signature)-1)]
     ### Pick out chosen path: 
