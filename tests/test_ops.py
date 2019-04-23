@@ -61,7 +61,10 @@ def extend_trap(n):
     preweights[:,1,:] += 1
     harder_weights,costs = construct_trap_weights() 
     all_weights = np.concatenate((preweights,harder_weights),axis = -1)
-    return all_weights,costs
+    all_weights+=1
+    added_costs=n+5
+    full_costs=added_costs+np.array(costs)
+    return all_weights,full_costs
 
 def test_min_greedy_path(): 
     ## Check to see if you can truly find a minimum greedy path should it exist. 
@@ -87,7 +90,7 @@ def test_calculate_cost_path_0():
     '''
     ## Check that this returns the correct behavior for signatures of variable size relative to the weights. 
     signature = [0]
-    data,costs = construct_trap_weights()
+    data,costs = extend_trap(10)
     greedycost = calculate_cost_path(signature,data)
     assert greedycost == costs[0]
     
@@ -96,8 +99,8 @@ def test_calculate_cost_path_1():
     To check that the greedy method is still working when we have a partial signature, but does not specify non-greedy behavior:
     '''
     ## Check that this returns the correct behavior for signatures of variable size relative to the weights. 
-    signature = [0,0]
-    data,costs = construct_trap_weights()
+    signature = [0 for i in range(12)]
+    data,costs = extend_trap(10)
     greedycost = calculate_cost_path(signature,data)
     assert greedycost == costs[0]
 
@@ -106,8 +109,8 @@ def test_calculate_cost_path_2():
     To check that the greedy method is still working when we have a partial signature, and the difficult decision has already been made: 
     '''
     ## Check that this returns the correct behavior for signatures of variable size relative to the weights. 
-    signature = [0,0,0]
-    data,costs = construct_trap_weights()
+    signature = [0 for i in range(16)]
+    data,costs = extend_trap(10)
     greedycost = calculate_cost_path(signature,data)
     assert greedycost == costs[0]
 
@@ -138,11 +141,11 @@ def test_bound_path_halt():
     '''
     To check that BB_k returns expected behavior w.r.t recognizing that it has found a solution. 
     '''
-    test_weights,costs = extend_trap(10) # generates a graph of length 20 
-    for N in range(16):
+    test_weights,costs = extend_trap(10) # generates a graph of length 15 
+    for N in range(17):
         test_node = Node_path([0 for n in range(N)],2,15)
         cost,solution = bound_path(test_node,test_weights,5)
-        if N < 15:
+        if N < 16:
             assert solution == 0
         else:
             assert solution == 1 

@@ -13,14 +13,15 @@ def branch_path(Node_path):
 ## At a given node, the parameter k determines a depth for which we recurse fully, after which we employ a greedy selection method over corresponding path choices. 
 def bound_path(Node_path,data,k):
     '''
-    Bound operation for path node. Our approximate bound calculates to a depth k what the cost of following that path would be, and then    finds a greedy path from that starting point. 
+    Bound operation for path node. Our approximate bound calculates to a depth k what the cost of following that path would be, and then finds a greedy path from that starting point. 
+    
     Parameters: 
     Node_path: A Node path instance that represents a solution set. 
     data: A set of weights that determine our particular problem. 
     k: the recursion depth we will use for our approximate cost calculation. 
     '''
     ## Problem parameters from the weights: 
-    N = np.shape(data)[-1]
+    N = np.shape(data)[-1]+1
     d = np.shape(data)[0]
     
     ## First we get the signature of Node path in question: 
@@ -61,7 +62,7 @@ def calculate_cost_path(signature,data):
     ### Pick out chosen path: 
     traversed_cost = [traversed[tuplet[0],tuplet[1],t] for t,tuplet in enumerate(tuplesigs)]
     ## First check if we have to use a greedy strategy at all: 
-    N = np.shape(data)[-1]
+    N = np.shape(data)[-1]+1
     if len(signature) == N:
         return sum(traversed_cost)
     else:
